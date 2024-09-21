@@ -9,7 +9,9 @@ module.exports = {
     extend: {
       colors: {
         background: "var(--background)",
-        foreground: "var(--foreground)"
+        foreground: "var(--foreground)",
+        brandSecondary: "#DCE546",
+        brandSecondaryBright: "#f4ff28"
       },
       animation: {
         "draw-highlight": "drawHighlight 0.5s linear forwards"

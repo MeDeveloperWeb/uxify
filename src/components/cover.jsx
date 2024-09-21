@@ -25,7 +25,7 @@ export default function Cover() {
           Crafting
           <br />
           <HighlightedText
-            className="text-[#DCE546]"
+            className="text-brandSecondary"
             bgSizeClass="bg-cover"
             svg="ellipse"
           >
@@ -47,27 +47,27 @@ export default function Cover() {
           ref={obstructRef}
         >
           We&apos;re a full-service studio{" "}
-          <HighlightedText className="text-[#f4ff28] font-medium">
+          <HighlightedText className="text-brandSecondaryBright font-medium">
             helping
           </HighlightedText>{" "}
           startups and established businesses{" "}
-          <HighlightedText className="text-[#f4ff28] font-medium">
+          <HighlightedText className="text-brandSecondaryBright font-medium">
             create
           </HighlightedText>{" "}
           impactful{" "}
-          <HighlightedText className="text-[#f4ff28] font-medium">
+          <HighlightedText className="text-brandSecondaryBright font-medium">
             digital solutions
           </HighlightedText>
           . We specialize in creating seamless{" "}
-          <HighlightedText className="text-[#f4ff28] font-medium">
+          <HighlightedText className="text-brandSecondaryBright font-medium">
             user experiences
           </HighlightedText>{" "}
           that not only captivate but convert, giving{" "}
-          <HighlightedText className="text-[#f4ff28] font-medium">
+          <HighlightedText className="text-brandSecondaryBright font-medium">
             your business
           </HighlightedText>{" "}
           the{" "}
-          <HighlightedText className="text-[#f4ff28] font-medium">
+          <HighlightedText className="text-brandSecondaryBright font-medium">
             competitive edge
           </HighlightedText>{" "}
           it needs to thrive in today’s digital landscape.
@@ -77,7 +77,7 @@ export default function Cover() {
       <motion.a
         ref={ref}
         href="#contact"
-        className="bg-[#f4ff28] text-black px-8 py-3 ml-2 rounded-full flex items-cente transition-colors w-fit"
+        className="bg-brandSecondaryBright text-black px-8 py-3 ml-2 rounded-full flex items-cente transition-colors w-fit"
         whileHover={{
           backgroundPosition: ["0%", "100%"], // Left to right
           transition: { duration: 0.2, delay: 0 }
