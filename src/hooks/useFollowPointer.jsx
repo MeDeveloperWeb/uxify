@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useMotionValue, useSpring, frame } from "framer-motion";
 
-const spring = { damping: 6, stiffness: 40, restDelta: 0.001 };
+const spring = { damping: 6, stiffness: 40, restDelta: 0.01 };
 
 export function useFollowPointer(ref, boundaryRef, obstructRef) {
   const xPoint = useMotionValue(0);
@@ -34,11 +34,6 @@ export function useFollowPointer(ref, boundaryRef, obstructRef) {
       const elementWidth = element.offsetWidth;
       const elementHeight = element.offsetHeight;
 
-      // Calculate new positions for the element
-      let newX = clientX - element.offsetLeft - elementWidth / 2;
-      let newY =
-        clientY - element.offsetTop - elementHeight / 2 + window.scrollY;
-
       // Clamp within the boundaryRef
       let clampedX = clamp(
         clientX,
@@ -46,8 +41,8 @@ export function useFollowPointer(ref, boundaryRef, obstructRef) {
         boundaryRight - elementWidth / 2
       );
       let clampedY = clamp(
-        clientY,
-        boundaryTop + elementHeight / 2,
+        clientY + window.scrollY,
+        boundaryTop + elementHeight / 2 - window.scrollY,
         boundaryBottom - elementHeight / 2
       );
 
