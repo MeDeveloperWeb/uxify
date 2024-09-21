@@ -17,7 +17,7 @@ export default function NavBar() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   return (
-    <div className="flex justify-between items-center py-4 px-8 fixed w-screen bg-gradient-to-tr from-indigo-600 to-purple-700 z-50">
+    <div className="flex justify-between items-center py-4 px-8 fixed w-screen bg-gradient-to-tr from-indigo-700 to-purple-800 z-50">
       <motion.h1
         className="text-3xl font-bold lg:px-10 text-[#DCE546]"
         initial={{ opacity: 0, y: -20 }}

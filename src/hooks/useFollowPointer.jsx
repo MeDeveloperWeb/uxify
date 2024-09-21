@@ -50,7 +50,7 @@ export function useFollowPointer(ref, boundaryRef, obstructRef) {
 
       // Adjust position if the element is overlapping with the obstructing element
       if (
-        //clampedX + elementWidth / 2 > obstructLeft &&
+        clampedX + elementWidth / 2 > obstructLeft &&
         clampedY + elementWidth / 2 > obstructTop &&
         clampedY < obstructBottom
       ) {

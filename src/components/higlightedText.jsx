@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 export default function HighlightedText({
   children,
   onHover = false,
@@ -10,18 +12,20 @@ export default function HighlightedText({
       <span className={`relative z-0 ${className}`} {...props}>
         {children}
       </span>
-      <span
-        className={`absolute inset-0 z-10 transition-transform duration-300 ease-in-out transform ${
-          onHover
-            ? "scale-x-100 lg:scale-x-0 lg:group-hover:scale-x-100"
-            : "scale-x-100"
-        } origin-left`}
+      <motion.span
+        className="absolute inset-0 z-0"
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: 1 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
       >
         <span className="absolute inset-0 opacity-50"></span>
-        <span
-          className={`absolute inset-0 bg-[url('/hhc.svg')] bg-no-repeat animate-draw-highlight ${bgSizeClass}`}
-        ></span>
-      </span>
+        <motion.span
+          initial={{ backgroundPositionX: "0%" }}
+          animate={{ backgroundPositionX: "100%" }}
+          transition={{ duration: 0.7, ease: "linear" }}
+          className={`absolute inset-0 bg-[url('/hhc.svg')] bg-no-repeat animate-draw-highlight ${bgSizeClass} origin-left`}
+        ></motion.span>
+      </motion.span>
     </span>
   );
 }

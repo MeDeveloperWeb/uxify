@@ -13,7 +13,7 @@ export default function Cover() {
   const { x, y } = useFollowPointer(ref, sectionRef, obstructRef);
 
   return (
-    <section className="bg-gradient-to-br from-indigo-600 to-purple-700 text-white min-h-screen px-4 lg:px-6 pt-6 flex flex-col justify-center overflow-hidden">
+    <section className="bg-gradient-to-br from-indigo-700 to-purple-800 text-white min-h-screen px-4 lg:px-6 pt-6 flex flex-col justify-center overflow-hidden">
       <div className="flex flex-col lg:flex-row items-center text-center w-full">
         <motion.h2
           className="text-[13.5vw] leading-[13vw] lg:leading-[26dvh] font-bold mb-6 text-start w-full"
@@ -24,11 +24,7 @@ export default function Cover() {
         >
           Crafting
           <br />
-          <HighlightedText
-            className="text-[#DCE546]"
-            onHover={true}
-            bgSizeClass="bg-cover"
-          >
+          <HighlightedText className="text-[#DCE546]" bgSizeClass="bg-cover">
             Digital
           </HighlightedText>
           <br />
