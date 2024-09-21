@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 
 export default function HighlightedText({
   children,
-  onHover = false,
   className,
   bgSizeClass = "bg-[length:100%_110%]",
+  svg = "ellipse",
   ...props
 }) {
   return (
@@ -23,7 +23,9 @@ export default function HighlightedText({
           initial={{ backgroundPositionX: "0%" }}
           animate={{ backgroundPositionX: "100%" }}
           transition={{ duration: 0.7, ease: "linear" }}
-          className={`absolute inset-0 bg-[url('/hhc.svg')] bg-no-repeat animate-draw-highlight ${bgSizeClass} origin-left`}
+          className={`absolute inset-0 ${
+            svg === "ellipse" ? "bg-[url('/hhc.svg')]" : "bg-[url('/hhcG.svg')]"
+          } bg-no-repeat animate-draw-highlight ${bgSizeClass} origin-left`}
         ></motion.span>
       </motion.span>
     </span>

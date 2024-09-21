@@ -24,14 +24,23 @@ export default function Cover() {
         >
           Crafting
           <br />
-          <HighlightedText className="text-[#DCE546]" bgSizeClass="bg-cover">
+          <HighlightedText
+            className="text-[#DCE546]"
+            bgSizeClass="bg-cover"
+            svg="ellipse"
+          >
             Digital
           </HighlightedText>
           <br />
-          <span className="">Experiences</span>
+          <HighlightedText
+            bgSizeClass="bg-[length:100%_34vw] lg:bg-[length:100%_40vw] xl:bg-[length:100%_35vw] bg-bottom"
+            svg="line"
+          >
+            Experiences
+          </HighlightedText>
         </motion.h2>
         <motion.p
-          className="text-xl mb-14 max-w-2xl text-justify mt-5 lg:-ml-[49vw] lg:w-[40vw] pl-2 self-start pr-4 lg:pr-0 lg:self-auto"
+          className="text-xl mb-14 max-w-2xl text-justify text-pretty lg:text-justify mt-5 lg:-ml-[47vw] lg:w-[40vw] pl-2 self-start pr-4 lg:pr-0 lg:self-auto"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
