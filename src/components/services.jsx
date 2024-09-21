@@ -61,7 +61,10 @@ const ServiceCard = ({ icon: Icon, title, description, index }) => (
 
 const ServicesSection = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-indigo-900 to-purple-900  min-h-dvh">
+    <section
+      className="py-20 bg-gradient-to-br from-indigo-900 to-purple-900  min-h-dvh"
+      id="services"
+    >
       <div className="container mx-auto px-4">
         <motion.h2
           className="text-4xl font-bold text-center mb-4 text-white"

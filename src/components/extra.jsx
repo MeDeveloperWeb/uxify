@@ -202,7 +202,7 @@ const ConvincingSectionExtra = () => {
         </motion.div>
       </div>
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-        <Canvas>
+        <Canvas className="hidden lg:block">
           <ambientLight intensity={0.5} />
           <pointLight position={[10, 10, 10]} />
           <Suspense fallback={null}>

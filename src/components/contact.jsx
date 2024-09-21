@@ -56,7 +56,10 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-indigo-900 to-purple-900 ">
+    <section
+      className="py-20 bg-gradient-to-br from-indigo-900 to-purple-900"
+      id="contact"
+    >
       <div className="container mx-auto px-4">
         <motion.h2
           className="text-4xl font-bold text-center text-white mb-4"

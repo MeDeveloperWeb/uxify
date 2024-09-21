@@ -85,7 +85,7 @@ const ConvincingSection = () => {
           </h3>
           <p className="text-xl mb-8">
             Let us prove how we can take your business to the next level online.
-            Contact us today and let&pos;s get started!
+            Contact us today and let&apos;s get started!
           </p>
           <motion.a
             href="#contact"

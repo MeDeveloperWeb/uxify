@@ -61,7 +61,10 @@ const ProjectCarousel = () => {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="py-16">
+    <section
+      className="py-16 min-h-dvh bg-gradient-to-b from-purple-50 to-purple-100 flex justify-center items-center"
+      id="projects"
+    >
       <div className="container mx-auto px-6">
         <motion.h2
           className="text-4xl font-bold mb-12 text-center text-gray-800"

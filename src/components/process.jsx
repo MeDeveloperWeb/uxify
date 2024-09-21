@@ -86,19 +86,22 @@ const ProcessStep = ({ title, description, icon, index }) => (
     transition={{ duration: 0.5, delay: index * 0.1 }}
   >
     <div className="bg-indigo-100 rounded-full p-4 mb-4">
-      <div className="text-indigo-600">{icon}</div>
+      <div className="text-purple-600">{icon}</div>
     </div>
-    <h3 className="text-xl font-semibold mb-2 text-gray-800">{title}</h3>
+    <h3 className="text-xl font-semibold mb-2 text-purple-950">{title}</h3>
     <p className="text-gray-600 max-w-xs">{description}</p>
   </motion.div>
 );
 
 const ProcessSection = () => {
   return (
-    <section className="py-20 min-h-dvh flex justify-center items-center">
+    <section
+      className="py-20 min-h-dvh flex justify-center items-center bg-gradient-to-b from-purple-50 to-purple-100"
+      id="process"
+    >
       <div className="container mx-auto px-4">
         <motion.h2
-          className="text-4xl font-bold text-center text-gray-800 mb-4"
+          className="text-4xl font-bold text-center text-purple-950 mb-4"
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -129,7 +132,7 @@ const ProcessSection = () => {
         >
           <a
             href="/contact"
-            className="bg-indigo-600 text-white font-semibold py-3 px-8 rounded-full hover:bg-indigo-700 transition-colors duration-300 inline-block"
+            className="bg-purple-600 text-white font-semibold py-3 px-8 rounded-full hover:bg-purple-700 transition-colors duration-300 inline-block"
           >
             Start Your Project
           </a>

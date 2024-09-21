@@ -9,9 +9,9 @@ import ServicesSection from "@/components/services";
 
 export default function Home() {
   return (
-    <main>
+    <main className="">
       <Cover />
-      <div className="bg-gradient-to-b from-indigo-50 to-white">
+      <div className="bg-gradient-to-br from-indigo-900 to-purple-900">
         <Info />
         <ServicesSection />
         <ProcessSection />
