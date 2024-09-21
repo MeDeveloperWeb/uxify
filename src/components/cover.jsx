@@ -4,6 +4,7 @@ import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X, ChevronRight } from "lucide-react";
 import { useFollowPointer } from "@/hooks/useFollowPointer";
+import HighlightedText from "./higlightedText";
 
 export default function Cover() {
   const ref = useRef(null);
@@ -12,7 +13,7 @@ export default function Cover() {
   const { x, y } = useFollowPointer(ref, sectionRef, obstructRef);
 
   return (
-    <section className="bg-gradient-to-br from-indigo-600 to-purple-700 text-white min-h-screen pl-6 pt-6 flex flex-col justify-center overflow-hidden">
+    <section className="bg-gradient-to-br from-indigo-600 to-purple-700 text-white min-h-screen px-4 lg:px-6 pt-6 flex flex-col justify-center overflow-hidden">
       <div className="flex flex-col lg:flex-row items-center text-center w-full">
         <motion.h2
           className="text-[13.5vw] leading-[13vw] lg:leading-[26dvh] font-bold mb-6 text-start w-full"
@@ -23,7 +24,13 @@ export default function Cover() {
         >
           Crafting
           <br />
-          <span className="text-[#DCE546]">Digital</span>
+          <HighlightedText
+            className="text-[#DCE546]"
+            onHover={true}
+            bgSizeClass="bg-cover"
+          >
+            Digital
+          </HighlightedText>
           <br />
           <span className="">Experiences</span>
         </motion.h2>
@@ -35,15 +42,29 @@ export default function Cover() {
           ref={obstructRef}
         >
           We&apos;re a full-service studio{" "}
-          <span className="text-[#f4ff28] font-medium">helping</span> startups
-          and established businesses{" "}
-          <span className="text-[#f4ff28] font-medium">create</span> impactful{" "}
-          <span className="text-[#f4ff28] font-medium">digital solutions</span>.
-          We specialize in creating seamless{" "}
-          <span className="text-[#f4ff28] font-medium">user experiences</span>{" "}
+          <HighlightedText className="text-[#f4ff28] font-medium">
+            helping
+          </HighlightedText>{" "}
+          startups and established businesses{" "}
+          <HighlightedText className="text-[#f4ff28] font-medium">
+            create
+          </HighlightedText>{" "}
+          impactful{" "}
+          <HighlightedText className="text-[#f4ff28] font-medium">
+            digital solutions
+          </HighlightedText>
+          . We specialize in creating seamless{" "}
+          <HighlightedText className="text-[#f4ff28] font-medium">
+            user experiences
+          </HighlightedText>{" "}
           that not only captivate but convert, giving{" "}
-          <span className="text-[#f4ff28] font-medium">your business</span> the{" "}
-          <span className="text-[#f4ff28] font-medium">competitive edge</span>{" "}
+          <HighlightedText className="text-[#f4ff28] font-medium">
+            your business
+          </HighlightedText>{" "}
+          the{" "}
+          <HighlightedText className="text-[#f4ff28] font-medium">
+            competitive edge
+          </HighlightedText>{" "}
           it needs to thrive in today’s digital landscape.
         </motion.p>
       </div>
