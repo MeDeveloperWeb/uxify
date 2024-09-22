@@ -131,7 +131,7 @@ const ProcessSection = () => {
           transition={{ duration: 0.5, delay: 0.5 }}
         >
           <a
-            href="/contact"
+            href="#contact"
             className="bg-purple-600 text-white font-semibold py-3 px-8 rounded-full hover:bg-purple-700 transition-colors duration-300 inline-block"
           >
             Start Your Project
