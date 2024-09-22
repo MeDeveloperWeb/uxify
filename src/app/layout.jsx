@@ -20,7 +20,8 @@ export const metadata = {
         alt: "UXpo Banner"
       }
     ]
-  }
+  },
+  "google-site-verification": "H9FlLsvf5DXdVYysGF5rwAxOT9h6b65Hij8exWT-8L8"
 };
 
 const schema = {
