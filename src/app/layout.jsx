@@ -1,4 +1,5 @@
 import NavBar from "@/components/navBar";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 export const metadata = {
@@ -41,6 +42,12 @@ export default function RootLayout({ children }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+        <GoogleAnalytics gaId="G-JR0H13VNTQ" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-JR0H13VNTQ');`
+          }}
         />
         <header className="text-white">
           <NavBar />
