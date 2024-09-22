@@ -36,7 +36,7 @@ export default function NavBar() {
         {isMenuOpen ? <X /> : <Menu />}
       </motion.button>
       <motion.nav
-        className="fixed top-0 left-0 bottom-0 w-screen bg-gradient-to-br from-indigo-800 to-purple-900 p-6 md:static md:w-auto md:bg-transparent md:p-0"
+        className="fixed top-0 left-0 bottom-0 w-screen bg-gradient-to-br from-indigo-800 to-purple-900 md:from-transparent md:to-transparent p-6 md:static md:w-auto md:bg-transparent md:p-0"
         initial="closed"
         animate={isMenuOpen ? "open" : "closed"}
         variants={menuVariants}

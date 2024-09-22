@@ -8,6 +8,7 @@ export const metadata = {
     "UXpo helps businesses thrive in the digital world with expert website development services. We create smooth, modern digital experiences tailored to your needs. Get your business online today with UXpo.",
   keywords:
     "website development, digital business solutions, UXpo, online business, digital experiences, business websites, web design, get business online, modern web solutions",
+  "google-site-verification": "H9FlLsvf5DXdVYysGF5rwAxOT9h6b65Hij8exWT-8L8",
   openGraph: {
     title: "UXpo - Websites & Applications",
     description: "Take your business online with our custom solutions.",
@@ -37,18 +38,13 @@ const schema = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <GoogleAnalytics gaId="G-JR0H13VNTQ" />
       <body
         className={`antialiased bg-gradient-to-br from-indigo-700 to-purple-800`}
       >
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
-        <GoogleAnalytics gaId="G-JR0H13VNTQ" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-JR0H13VNTQ');`
-          }}
         />
         <header className="text-white">
           <NavBar />
