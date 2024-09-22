@@ -142,7 +142,7 @@ const ConvincingSectionExtra = () => {
   return (
     <section
       ref={ref}
-      className="bg-gradient-to-br from-indigo-900 to-purple-900 text-white min-h-screen py-20 px-4 lg:px-6 overflow-hidden relative"
+      className="bg-gradient-to-br from-indigo-700 to-purple-800 text-white min-h-screen py-20 px-4 lg:px-6 overflow-hidden relative"
     >
       <ParticlesBackground />
       <div className="container mx-auto relative z-10">

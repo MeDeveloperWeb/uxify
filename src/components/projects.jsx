@@ -26,11 +26,6 @@ const projects = [
     title: "Travel Booking Platform",
     description: "A comprehensive solution for planning and booking trips",
     image: "/api/placeholder/400/300"
-  },
-  {
-    title: "Fitness Tracker",
-    description: "A motivating app to help users achieve their fitness goals",
-    image: "/api/placeholder/400/300"
   }
 ];
 
@@ -57,7 +52,7 @@ const ProjectCarousel = () => {
   useEffect(() => {
     if (!emblaApi) return;
     onSelect();
-    emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect).on("select", onSelect);
   }, [emblaApi, onSelect]);
 
   return (

@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { sendEmail } from "@/actions/sendEmail";
+import ConfirmationPopup from "./confirmation";
 
 const InputField = ({
   label,
@@ -26,6 +28,7 @@ const InputField = ({
       value={value}
       onChange={onChange}
       placeholder={placeholder}
+      required={true}
       className="w-full bg-white bg-opacity-20 border border-white border-opacity-25 rounded-lg py-3 px-4 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 transition duration-300"
     />
   </motion.div>
@@ -39,6 +42,10 @@ const ContactForm = () => {
     message: ""
   });
 
+  const [showPop, setShowPop] = useState(false);
+
+  const toggle = () => setShowPop((s) => !s);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
@@ -51,8 +58,10 @@ const ContactForm = () => {
     e.preventDefault();
     // Here you would typically send the form data to your backend
     console.log("Form submitted:", formData);
+    sendEmail(formData);
+    toggle();
     // Reset form after submission
-    setFormData({ name: "", email: "", businessDetails: "", message: "" });
+    //setFormData({ name: "", email: "", businessDetails: "", message: "" });
   };
 
   return (
@@ -139,6 +148,7 @@ const ContactForm = () => {
           </form>
         </motion.div>
       </div>
+      <ConfirmationPopup isOpen={showPop} onClose={toggle} />
     </section>
   );
 };
