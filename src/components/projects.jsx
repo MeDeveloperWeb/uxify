@@ -8,24 +8,37 @@ import Image from "next/image";
 
 const projects = [
   {
-    title: "E-commerce Redesign",
+    title: "Fashion Kart",
     description: "A modern, user-friendly interface for an online store",
-    image: "/api/placeholder/400/300"
+    image: "/ekart.png",
+    link: "https://wekart.netlify.app/"
   },
   {
-    title: "Finance Dashboard",
-    description: "An intuitive dashboard for a fintech startup",
-    image: "/api/placeholder/400/300"
+    title: "BeeBuzz",
+    description: "An Pixel Perfect UI for a content management startup",
+    image: "/beebuzz.png",
+    link: "https://www.beebuzz.co.in/"
   },
   {
-    title: "Social Media App",
-    description: "A sleek mobile app for a new social platform",
-    image: "/api/placeholder/400/300"
+    title: "Snippet",
+    description:
+      "A platform allowing users to run their code in realtime and share it with friends.",
+    image: "/snippet.png",
+    link: "https://snippett.vercel.app/"
   },
   {
-    title: "Travel Booking Platform",
-    description: "A comprehensive solution for planning and booking trips",
-    image: "/api/placeholder/400/300"
+    title: "Edunify",
+    description:
+      "A School Library to list all schools in one place making it easier to find best school according to one's need.",
+    image: "/edunify.png",
+    link: "https://edunifyy.vercel.app"
+  },
+  {
+    title: "Library Management",
+    description:
+      "A Library management app allowing users to keep track of the books they read.",
+    image: "/library.png",
+    link: "https://medeveloperweb.github.io/OdinLibrary/"
   }
 ];
 
@@ -69,6 +82,7 @@ const ProjectCarousel = () => {
             y: 0,
             transition: { duration: 0.5 }
           }}
+          viewport={{ once: true }}
         >
           Our Latest Projects
         </motion.h2>
@@ -76,7 +90,9 @@ const ProjectCarousel = () => {
           <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex">
               {projects.map((project, index) => (
-                <motion.div
+                <motion.a
+                  href={project.link}
+                  target="_blank"
                   key={index}
                   className="flex-[0_0_100%] min-w-0 sm:flex-[0_0_50%] lg:flex-[0_0_33.33%] px-4"
                   initial={{ opacity: 0, scale: 0.8 }}
@@ -91,8 +107,8 @@ const ProjectCarousel = () => {
                       src={project.image}
                       alt={project.title}
                       className="w-full h-48 object-cover"
-                      width={100}
-                      height={100}
+                      width={400}
+                      height={400}
                     />
                     <div className="p-6">
                       <h3 className="text-xl font-semibold mb-2 text-gray-800">
@@ -101,7 +117,7 @@ const ProjectCarousel = () => {
                       <p className="text-gray-600">{project.description}</p>
                     </div>
                   </div>
-                </motion.div>
+                </motion.a>
               ))}
             </div>
           </div>

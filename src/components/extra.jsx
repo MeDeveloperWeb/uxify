@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, Suspense } from "react";
+import { useRef, Suspense, useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Sphere, MeshDistortMaterial } from "@react-three/drei";
@@ -131,6 +131,7 @@ const ParticlesBackground = () => {
 
 const ConvincingSectionExtra = () => {
   const ref = useRef(null);
+  const [isMobile, setIsMobile] = useState(true);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"]
@@ -138,6 +139,11 @@ const ConvincingSectionExtra = () => {
 
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8]);
+
+  useEffect(() => {
+    if (window.innerWidth < 1024) setIsMobile(true);
+    else setIsMobile(false);
+  }, []);
 
   return (
     <section
@@ -202,13 +208,15 @@ const ConvincingSectionExtra = () => {
         </motion.div>
       </div>
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-        <Canvas className="hidden lg:block">
-          <ambientLight intensity={0.5} />
-          <pointLight position={[10, 10, 10]} />
-          <Suspense fallback={null}>
-            <AnimatedSphere />
-          </Suspense>
-        </Canvas>
+        {!isMobile && (
+          <Canvas className="hidden lg:block">
+            <ambientLight intensity={0.5} />
+            <pointLight position={[10, 10, 10]} />
+            <Suspense fallback={null}>
+              <AnimatedSphere />
+            </Suspense>
+          </Canvas>
+        )}
       </div>
     </section>
   );
