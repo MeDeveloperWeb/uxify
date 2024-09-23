@@ -1,5 +1,6 @@
 import NavBar from "@/components/navBar";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 export const metadata = {
@@ -50,6 +51,7 @@ export default function RootLayout({ children }) {
           <NavBar />
         </header>
         {children}
+        <SpeedInsights />
         <footer className="bg-gray-800 text-white py-8">
           <div className="container mx-auto px-6 text-center">
             <p>&copy; 2024 UXpo. All rights reserved.</p>
