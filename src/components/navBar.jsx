@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Menu, X, ChevronRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function NavBar() {
@@ -36,7 +37,7 @@ export default function NavBar() {
         {isMenuOpen ? <X /> : <Menu />}
       </motion.button>
       <motion.nav
-        className="fixed top-0 left-0 bottom-0 w-screen bg-gradient-to-br from-indigo-800 to-purple-900 md:from-transparent md:to-transparent p-6 md:static md:w-auto md:bg-transparent md:p-0"
+        className="h-full fixed top-0 left-0 bottom-0 w-screen bg-gradient-to-br from-indigo-800 to-purple-900 md:from-transparent md:to-transparent p-6 md:static md:w-auto md:bg-transparent md:p-0"
         initial="closed"
         animate={isMenuOpen ? "open" : "closed"}
         variants={menuVariants}
@@ -48,13 +49,13 @@ export default function NavBar() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              <a
+              <Link
                 href={`#${item.toLowerCase()}`}
-                onClick={() => setIsMenuOpen(false)}
-                className="text-brandSecondaryBright md:text-white text-3xl md:text-base font-semibold md:font-medium hover:text-gray-300"
+                // onClick={() => setIsMenuOpen(false)}
+                className="h-full text-brandSecondaryBright md:text-white text-3xl md:text-base font-semibold md:font-medium hover:text-gray-300"
               >
                 {item}
-              </a>
+              </Link>
             </motion.li>
           ))}
         </ul>
